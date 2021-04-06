@@ -1,10 +1,39 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/gatsby-config/
- */
+const fs = require('fs');
+const gracefulFs = require('graceful-fs');
+gracefulFs.gracefulify(fs);
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+  siteMetadata: {
+    title: `recipes`,
+  },
+  plugins: [
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        typeName: `recipeJson`, // a fixed string
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `recipes`,
+        path: `${__dirname}/content/test_recipes/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-git-clone',
+      options: {
+        repository: 'https://github.com/dpapathanasiou/recipes.git',
+        path: `${__dirname}/content/recipes`,
+        // branch: 'origin/main'
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `recipes`,
+        path: `${__dirname}/content/recipes/index`,
+      },
+    },
+  ],
 }
