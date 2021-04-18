@@ -14,13 +14,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `recipes`,
-        path: `${__dirname}/content/test_recipes/`,
-      },
-    },
-    {
       resolve: 'gatsby-plugin-git-clone',
       options: {
         repository: 'https://github.com/dpapathanasiou/recipes.git',
