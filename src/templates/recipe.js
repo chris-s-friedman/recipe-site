@@ -7,17 +7,17 @@ export default function recipePage({ data }) {
         <div style={{ maxWidth: `960px`, margin: `1.45rem` }}>
             <h1>{recipe.title}</h1>
             <h2>Ingredients</h2>
-            <ol>
-                {recipe.directions.map((data, index) => {
-                    return <li key={`content_item_${index}`}>{data}</li>
-                })}
-            </ol>
-            <h2>Directions</h2>
             <ul>
                 {recipe.ingredients.map((data, index) => {
                     return <li key={`content_item_${index}`}>{data}</li>
                 })}
             </ul>
+            <h2>Directions</h2>
+            <ol>
+                {recipe.directions.map((data, index) => {
+                    return <li key={`content_item_${index}`}>{data}</li>
+                })}
+            </ol>
             <p>Source: <a href={recipe.url}>{recipe.source}</a></p>
         </div>
     )
