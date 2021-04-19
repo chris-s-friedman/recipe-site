@@ -14,12 +14,13 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
-    "gatsby": "^2.32.11",
-    "gatsby-source-filesystem": "^2.11.0",
-    "gatsby-transformer-json": "^2.11.0",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "simple-git": "^2.37.0"
+    "gatsby": "^3.3.0",
+    "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-transformer-json": "^3.0.0",
+    "gatsby-transformer-remark": "^4.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "simple-git": "^2.38.0"
   },
   "devDependencies": {
     "gatsby-plugin-git-clone": "^0.1.0",
