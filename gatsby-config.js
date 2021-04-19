@@ -21,6 +21,7 @@ module.exports = {
         // branch: 'origin/main'
       }
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
