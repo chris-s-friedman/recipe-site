@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 export default function Home({ data }) {
   console.log(data)
@@ -11,7 +11,9 @@ export default function Home({ data }) {
       <h4>{data.allMarkdownRemark.totalCount} Markdown Pages</h4>
       {data.allMarkdownRemark.edges.map(({ node }) => (
         <div key={node.id}>
-          {node.parent.name}{" "}
+          <Link to={node.fields.slug}>
+            {node.parent.name}{" "}
+          </Link>
         </div>
       ))}
     </div>
@@ -24,6 +26,9 @@ export const query = graphql`
     totalCount
     edges {
       node {
+        fields {
+          slug
+        }
         id
         parent {
           ... on File {
